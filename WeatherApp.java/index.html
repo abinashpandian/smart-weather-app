@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartWeather - Forecast & Advisor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-switcher">
+        <button onclick="changeTheme('default')">☀️</button>
+        <button onclick="changeTheme('dark')">🌙</button>
+        <button onclick="changeTheme('ocean')">🌊</button>
+    </div>
+
+    <div class="container">
+        <h1>🌤️ Smart Weather Forecast</h1>
+        
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name">
+            <button id="getWeatherBtn">Get Weather</button>
+            <button id="locationBtn" title="Use my location">📍</button>
+        </div>
+
+        <div id="weatherInfo" style="display: none;">
+            <div class="weather-main">
+                <h2 id="cityName"></h2>
+                <p class="date-time" id="dateTime"></p>
+                <img id="icon" src="" alt="Weather icon">
+                <p class="temperature" id="temperature"></p>
+                <p class="description" id="description"></p>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="label">💧 Humidity</span>
+                    <span id="humidity"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">💨 Wind Speed</span>
+                    <span id="windSpeed"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">🌡️ Feels Like</span>
+                    <span id="feelsLike"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">👁️ Visibility</span>
+                    <span id="visibility"></span>
+                </div>
+            </div>
+
+            <div class="outfit-advisor">
+                <h3>👔 What to Wear</h3>
+                <p id="outfitSuggestion"></p>
+            </div>
+
+            <div class="activity-suggestions">
+                <h3>🎯 Suggested Activities</h3>
+                <div id="activities"></div>
+            </div>
+
+            <!-- 7-Day Forecast Section -->
+            <div class="forecast-section">
+                <h3>📅 7-Day Forecast</h3>
+                <div id="weeklyForecast" class="forecast-container"></div>
+            </div>
+
+            <!-- Famous Tourist Spots Section -->
+            <div class="tourist-spots">
+                <h3>🗺️ Famous Places to Visit</h3>
+                <div id="touristSpots" class="spots-container"></div>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error" style="display: none;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
